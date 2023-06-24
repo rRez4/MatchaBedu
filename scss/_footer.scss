@@ -1,0 +1,35 @@
+$color-primay: #b12f2f;
+$font-size-main: 26px;
+
+.footer {
+  background-color: $color-primay;
+}
+
+h4 {
+  color: $color-primay;
+  font-size:$font-size-main;
+}
+strong{
+    font-size:$font-size-main;
+}
+
+// Mixins:
+
+@mixin button-style($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+
+
+  .button-primary {
+ 
+    @include button-style(#007bff, #fff)
+
+  }
+
+  .button-secondary {
+
+    @include button-style(#ff00ee, #379c56)
+  }
