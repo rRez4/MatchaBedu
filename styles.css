@@ -141,17 +141,7 @@ li {
   width: 120px;
   margin-top: 10px;
 }
-.features {
-  display: grid;
-  grid-template: repeat(2, 1fr) / repeat(2, 330px);
-}
 
-.features > article {
-  width: 300px;
-  height: 300px;
-  border-radius: 12px;
-  background-color: rgb(255, 253, 253);
-}
 .features {
   background-color: #025157;
   padding: 5% 10%;
@@ -217,6 +207,7 @@ li {
   margin-top: 0;
   height: 100%;
 }
+
 .success-stories {
   background-color: #a1d683;
   padding: 5% 15%;
@@ -264,6 +255,7 @@ li {
   font-weight: 500;
 }
 
+/* Cambiamos el alto mínimo de la tarjeta, para que se vea bien en responsive */
 .success-stories .card {
   max-width: 370px;
   width: 100%;
@@ -271,11 +263,13 @@ li {
   margin: 0 auto;
 }
 
+/* Con object-fit, hacemos que la imagen se ajuste a la medida de su contenedor y limitamos su alto */
 .success-stories .card img {
   max-height: 30vh;
   object-fit: cover;
 }
 
+/* Agregamos position: relative para recibir un elemento con position:absolute más adelante */
 .success-stories .card .card-body {
   max-width: 370px;
   width: 100%;
@@ -283,6 +277,7 @@ li {
   padding: 40px 1rem 1rem;
 }
 
+/* Estos son los estilos para textos y acomodo de elementos */
 .success-stories .card .card-body h4 {
   color: #025157;
   font-size: 18px;
@@ -333,6 +328,7 @@ li {
   border: none;
 }
 
+/* Aqui hacemos un círculo con CSS! Este se posicionará en el margen superior de .card-body */
 .success-stories .card .card-body .card-circle {
   display: flex;
   align-items: center;
@@ -345,11 +341,13 @@ li {
   padding: 5px;
 }
 
+/* Cada círculo tiene su propio color. Verifica qué significa este selector: .card-circle.everly */
 .success-stories .card .card-body .card-circle.everly {
   background-color: #f9da73;
   border: 5px solid #f9da73;
 }
 
+/* Los círculos deben recibir la imagen y ajustarla al tamaño */
 .success-stories .card .card-body .card-circle.everly img {
   object-fit: contain;
   width: 100%;
@@ -377,7 +375,18 @@ li {
   width: 100%;
 }
 
-@media (breakpoint) {
+
+@media (max-width: 991px) {
+  .success-stories {
+    flex-direction: column;
+    padding: 5% 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .success-stories {
+    flex-direction: column;
+}
 }
 /*
 @media (max-width: 1275px) {
